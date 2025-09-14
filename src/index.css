@@ -1,0 +1,19 @@
+:root {
+  /* font */
+  --ubuntu: 'Ubuntu', sans-serif;
+  --dmsans: 'DM Sans', sans-serif;
+
+  /* colors */
+  --background: #e5e5e5;
+  --primary: #5a9bfe;
+  --footer: #031525;
+  --black: #000;
+  --gray: #aaa;
+}
+
+body {
+  font-family: var(--ubuntu);
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: var(--background);
+}
