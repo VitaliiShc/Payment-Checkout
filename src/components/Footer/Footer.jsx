@@ -1,5 +1,3 @@
-// src\components\Footer\Footer.jsx
-
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 import styles from './Footer.module.css';
@@ -69,7 +67,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                 >
                   <svg className={styles.socialIcon}>
-                    <use href="/icons/icons-sprite.svg#icon-instagram"></use>
+                    <use href="/icons-sprite.svg#instagram"></use>
                   </svg>
                 </a>
               </li>
@@ -83,7 +81,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                 >
                   <svg className={styles.socialIcon}>
-                    <use href="/icons/icons-sprite.svg#icon-twitter"></use>
+                    <use href="/icons-sprite.svg#twitter"></use>
                   </svg>
                 </a>
               </li>
@@ -97,7 +95,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                 >
                   <svg className={styles.socialIcon}>
-                    <use href="/icons/icons-sprite.svg#icon-facebook"></use>
+                    <use href="/icons-sprite.svg#facebook"></use>
                   </svg>
                 </a>
               </li>
