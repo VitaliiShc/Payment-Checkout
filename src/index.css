@@ -4,13 +4,16 @@
   --second-family: 'DM Sans', sans-serif;
 
   /* colors */
-  --background: #e5e5e5;
+  --background: #fff;
   --primary: #5a9bfe;
   --footer: #031525;
   --black: #000;
+  --dark: #07122e;
   --white: #fff;
   --white-rgb: 255, 255, 255;
   --gray: #aaa;
+  --border: rgba(15, 13, 35, 0.2);
+  --border-focus: #0f0d23;
 }
 
 body {
@@ -24,7 +27,13 @@ p,
 a,
 h1,
 h2,
-ul {
+div,
+span,
+input,
+fieldset,
+legend,
+ul,
+li {
   margin: 0;
 }
 
