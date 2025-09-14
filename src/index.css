@@ -1,19 +1,38 @@
 :root {
   /* font */
-  --ubuntu: 'Ubuntu', sans-serif;
-  --dmsans: 'DM Sans', sans-serif;
+  --font-family: 'Ubuntu', sans-serif;
+  --second-family: 'DM Sans', sans-serif;
 
   /* colors */
   --background: #e5e5e5;
   --primary: #5a9bfe;
   --footer: #031525;
   --black: #000;
+  --white: #fff;
+  --white-rgb: 255, 255, 255;
   --gray: #aaa;
 }
 
 body {
-  font-family: var(--ubuntu);
-  max-width: 1440px;
-  margin: 0 auto;
+  font-family: var(--font-family);
+  /* max-width: 1440px; */
+  /* margin: 0 auto; */
   background-color: var(--background);
+}
+
+p,
+a,
+h1,
+h2,
+ul {
+  margin: 0;
+}
+
+ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+* {
+  box-sizing: border-box;
 }

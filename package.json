@@ -10,10 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "clsx": "^2.1.1",
     "formik": "^2.4.6",
     "modern-normalize": "^3.0.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-router-dom": "^7.9.1",
     "yup": "^1.7.0"
   },
   "devDependencies": {
