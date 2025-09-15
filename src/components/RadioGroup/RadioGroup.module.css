@@ -7,7 +7,6 @@
 .radioLabel {
   border: 1px solid var(--border);
   border-radius: 6px;
-  width: 245px;
   height: 56px;
   display: flex;
   justify-content: space-between;

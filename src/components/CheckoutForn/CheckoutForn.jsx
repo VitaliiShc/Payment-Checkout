@@ -1,11 +1,56 @@
+import { useState } from 'react';
 import { Formik, Form, ErrorMessage } from 'formik';
 import { checkoutSchema } from '../../schemas/checkoutSchema';
+import clsx from 'clsx';
 import FormInput from '../FormInput/FormInput';
 import SelectInput from '../SelectInput/SelectInput';
 import styles from './CheckoutForn.module.css';
 import RadioGroup from '../RadioGroup/RadioGroup';
+import ProductItem from '../ProductItem/ProductItem';
+import Button from '../Button/Button';
+import PromocodeInput from '../PromocodeInput/PromocodeInput';
+
+const products = [
+  {
+    name: 'Capsul White',
+    drugForm: '15 Capsul',
+    color: 'White',
+    packs: 4,
+    price: 35,
+  },
+  {
+    name: 'Rainbow Drugs',
+    drugForm: '10 Capsul',
+    color: 'White',
+    packs: 4,
+    price: 35,
+  },
+  {
+    name: 'Rainbow Drugs White',
+    drugForm: '5 Capsul',
+    color: 'White',
+    packs: 4,
+    price: 35,
+  },
+  {
+    name: 'Zaitun Olive Oil',
+    drugForm: '2 Bottle',
+    color: 'White',
+    packs: 4,
+    price: 35,
+  },
+  {
+    name: 'Acetylcysteine Pill',
+    drugForm: '15 Capsul',
+    color: 'White',
+    packs: 4,
+    price: 35,
+  },
+];
 
 export default function CheckoutForm() {
+  const [discount, setDiscount] = useState(0);
+
   const initialValues = {
     fullName: '',
     email: '',
@@ -16,10 +61,20 @@ export default function CheckoutForm() {
     country: '',
     shipping: '',
     payment: '',
+    promocode: '',
   };
 
-  const handleSubmit = (values) => {
-    console.log('Checkout form data:', values);
+  const subTotal = products.reduce(
+    (acc, product) => acc + product.packs * product.price,
+    0
+  );
+  const shippingFee = 40;
+  const total = subTotal - discount + shippingFee;
+
+  const handleSubmit = (values, { resetForm }) => {
+    console.log('Checkout form data:', { ...values, total });
+    resetForm();
+    setDiscount(0);
   };
 
   return (
@@ -121,7 +176,38 @@ export default function CheckoutForm() {
         </div>
 
         <div className={styles.rightBlock}>
-          <button type="submit">Checkout</button>
+          <h2 className={styles.subTitle}>Order Summary</h2>
+          <ul className={styles.productList}>
+            {products.map((product, idx) => (
+              <li key={idx}>
+                <ProductItem {...product} />
+              </li>
+            ))}
+          </ul>
+
+          <h2 className={styles.promocodeTitle}>Apply Promocode</h2>
+          <PromocodeInput
+            subTotal={subTotal}
+            setDiscount={setDiscount}
+            discount={discount}
+          />
+
+          <div className={clsx(styles.totalBlock, styles.mb48)}>
+            <h2 className={styles.totalTitle}>Sub total</h2>
+            <p className={styles.totalAmount}>{subTotal}</p>
+          </div>
+
+          <div className={clsx(styles.totalBlock, styles.mb80)}>
+            <h2 className={styles.totalTitle}>Shipping Fee</h2>
+            <p className={styles.totalAmount}>{shippingFee}</p>
+          </div>
+
+          <div className={styles.resultBlock}>
+            <h2 className={styles.totalTitle}>Total</h2>
+            <p className={styles.result}>{total}</p>
+          </div>
+
+          <Button type="submit" label="Checkout" />
         </div>
       </Form>
     </Formik>

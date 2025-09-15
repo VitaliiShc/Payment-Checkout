@@ -1,10 +1,11 @@
 .form {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 96px;
+  margin-bottom: 120px;
 }
 
 .leftBlock {
-  width: 515px;
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -17,6 +18,8 @@
 }
 
 .rightBlock {
+  display: flex;
+  flex-direction: column;
 }
 
 .fieldset {
@@ -29,11 +32,36 @@
   gap: 32px;
 }
 
-.legend {
+.legend,
+.subTitle {
   font-weight: 500;
   font-size: 24px;
   margin-bottom: 24px;
   display: block;
+}
+
+.productList {
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.productList li {
+  position: relative;
+}
+
+.productList li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -16px;
+  height: 1px;
+  background-color: var(--border);
 }
 
 .subLegend {
@@ -46,4 +74,57 @@
 
 .error {
   color: red;
+}
+
+.promocodeTitle {
+  font-weight: 500;
+  line-height: 1.12;
+  margin-bottom: 24px;
+}
+
+.totalBlock,
+.resultBlock {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.totalBlock::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -16px;
+  height: 1px;
+  background-color: var(--border);
+}
+
+.totalTitle,
+.totalAmount {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 0.9;
+}
+
+.totalAmount::before {
+  content: '$';
+}
+
+.mb48 {
+  margin-bottom: 48px;
+}
+
+.mb80 {
+  margin-bottom: 80px;
+}
+
+.result {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 0.75;
+  margin-bottom: 43px;
+}
+
+.result::before {
+  content: '$';
 }

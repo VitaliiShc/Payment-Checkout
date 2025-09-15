@@ -14,12 +14,11 @@
   --gray: #aaa;
   --border: rgba(15, 13, 35, 0.2);
   --border-focus: #0f0d23;
+  --img-background: #c4c4c4;
 }
 
 body {
   font-family: var(--font-family);
-  /* max-width: 1440px; */
-  /* margin: 0 auto; */
   background-color: var(--background);
 }
 
@@ -27,6 +26,7 @@ p,
 a,
 h1,
 h2,
+h3,
 div,
 span,
 input,
@@ -44,4 +44,17 @@ ul {
 
 * {
   box-sizing: border-box;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
 }
