@@ -11,15 +11,15 @@
   gap: 32px;
 }
 
+.rightBlock {
+  display: flex;
+  flex-direction: column;
+}
+
 .cityZip {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
-}
-
-.rightBlock {
-  display: flex;
-  flex-direction: column;
 }
 
 .fieldset {
@@ -127,4 +127,11 @@
 
 .result::before {
   content: '$';
+}
+
+@media (max-width: 960px) {
+  .form {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
 }

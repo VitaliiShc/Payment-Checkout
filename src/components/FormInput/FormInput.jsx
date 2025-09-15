@@ -12,6 +12,7 @@ export default function FormInput({ label, name, type = 'text', placeholder }) {
           {label}{' '}
           <ErrorMessage name={name} component="span" className={styles.error} />
         </label>
+
         <Field
           id={inputId}
           name={name}

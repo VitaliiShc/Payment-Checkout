@@ -15,13 +15,19 @@
   --border: rgba(15, 13, 35, 0.2);
   --border-focus: #0f0d23;
   --img-background: #c4c4c4;
+  --feature-img-bgc: #fff3ec;
 }
 
 body {
   font-family: var(--font-family);
+  margin: 0 auto;
   background-color: var(--background);
 }
 
+header,
+main,
+footer,
+body,
 p,
 a,
 h1,

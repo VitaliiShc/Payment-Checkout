@@ -12,6 +12,7 @@ export default function Footer() {
             High quality and trusted medical shop service
           </p>
         </div>
+
         <div className={styles.block}>
           <p className={styles.blockLabel}>About us</p>
           <ul className={styles.links}>
@@ -37,18 +38,21 @@ export default function Footer() {
             </li>
           </ul>
         </div>
+
         <div className={styles.block}>
           <p className={styles.blockLabel}>FAQ</p>
           <Link to="/faq" className={clsx(styles.link, styles.text)}>
             FAQ
           </Link>
         </div>
+
         <div className={styles.block}>
           <p className={styles.blockLabel}>Blog</p>
           <Link to="/blog" className={clsx(styles.link, styles.text)}>
             Blog
           </Link>
         </div>
+
         <div className={styles.block}>
           <p className={styles.blockLabel}>Contact us</p>
           <Link to="/contacts" className={clsx(styles.link, styles.text)}>
@@ -103,6 +107,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
       <div className={styles.footerBottom}>
         Copyrights © 2021 Shopdoc. All Rights Reserved.
       </div>

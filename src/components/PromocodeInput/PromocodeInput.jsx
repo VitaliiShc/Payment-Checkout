@@ -31,6 +31,7 @@ export default function PromocodeInput({ subTotal, setDiscount, discount }) {
         placeholder="Promotion or Discount code"
         onChange={(evt) => setValue(evt.target.value)}
       />
+
       <button
         type="button"
         className={styles.applyCodeBtn}

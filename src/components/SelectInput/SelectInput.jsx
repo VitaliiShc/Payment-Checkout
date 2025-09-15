@@ -17,6 +17,7 @@ export default function SelectInput({
           {label}{' '}
           <ErrorMessage name={name} component="span" className={styles.error} />
         </label>
+
         <Field as="select" id={selectId} name={name} className={styles.input}>
           <option value="" disabled hidden>
             {placeholder}

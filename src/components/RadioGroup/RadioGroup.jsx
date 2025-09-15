@@ -10,6 +10,7 @@ export default function RadioGroup({ name, options }) {
             <span className={styles.icon}></span>
             <span className={styles.option}>{option}</span>
           </div>
+
           <Field
             type="radio"
             name={name}
