@@ -1,9 +1,9 @@
 .button {
   width: 100%;
   color: var(--white);
-  padding: 31px;
+  padding: 15px;
+  font-size: 14px;
   font-weight: 500;
-  font-size: 20px;
   line-height: 0.9;
   background-color: var(--primary);
   border: none;
@@ -14,4 +14,18 @@
 
 .button:hover {
   color: var(--dark);
+}
+
+@media (min-width: 768px) {
+  .button {
+    padding: 20px;
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .button {
+    padding: 30px;
+    font-size: 20px;
+  }
 }

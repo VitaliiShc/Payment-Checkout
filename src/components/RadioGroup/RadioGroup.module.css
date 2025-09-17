@@ -40,6 +40,7 @@
 .option {
   font-family: var(--second-family);
   line-height: 1.12;
+  font-size: 12px;
   color: var(--black);
   align-self: center;
 }
@@ -47,4 +48,16 @@
 .radio {
   width: 20px;
   height: 20px;
+}
+
+@media (min-width: 768px) {
+  .option {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .option {
+    font-size: 16px;
+  }
 }

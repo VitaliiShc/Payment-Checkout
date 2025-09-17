@@ -14,7 +14,7 @@
   left: 9px;
   background: var(--background);
   padding: 0 12px;
-  font-size: 14px;
+  font-size: 10px;
   line-height: 1.29;
   color: var(--gray);
 }
@@ -24,7 +24,7 @@
   padding: 12px;
   border: 1px solid var(--border);
   border-radius: 6px;
-  font-size: 16px;
+  font-size: 12px;
   background: var(--background);
   font-family: var(--second-family);
   line-height: 1.12;
@@ -39,4 +39,24 @@
 
 .error {
   color: red;
+}
+
+@media (min-width: 768px) {
+  .label {
+    font-size: 12px;
+  }
+
+  .input {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .label {
+    font-size: 14px;
+  }
+
+  .input {
+    font-size: 16px;
+  }
 }

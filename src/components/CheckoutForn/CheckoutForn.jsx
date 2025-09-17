@@ -61,15 +61,14 @@ export default function CheckoutForm() {
     country: '',
     shipping: '',
     payment: '',
-    promocode: '',
   };
 
   const subTotal = products.reduce(
     (acc, product) => acc + product.packs * product.price,
     0
   );
-  const shippingFee = 40;
-  const total = subTotal - discount + shippingFee;
+  const SHIPPING_FEE = 40;
+  const total = subTotal - discount + SHIPPING_FEE;
 
   const handleSubmit = (values, { resetForm }) => {
     console.log('Checkout form data:', { ...values, total });
@@ -84,7 +83,7 @@ export default function CheckoutForm() {
       onSubmit={handleSubmit}
     >
       <Form className={styles.form}>
-        <div className={styles.leftBlock}>
+        <div className={styles.deliveryDetails}>
           <fieldset className={styles.fieldset}>
             <legend className={styles.legend}>Personal Details</legend>
             <FormInput
@@ -117,6 +116,7 @@ export default function CheckoutForm() {
               type="text"
               placeholder="Street Address"
             />
+
             <div className={styles.cityZip}>
               <FormInput
                 label="City"
@@ -124,6 +124,7 @@ export default function CheckoutForm() {
                 type="text"
                 placeholder="City"
               />
+
               <FormInput
                 label="Zip Code"
                 name="zip"
@@ -175,7 +176,7 @@ export default function CheckoutForm() {
           </fieldset>
         </div>
 
-        <div className={styles.rightBlock}>
+        <div className={styles.orderDetails}>
           <h2 className={styles.subTitle}>Order Summary</h2>
           <ul className={styles.productList}>
             {products.map((product, idx) => (
@@ -192,14 +193,14 @@ export default function CheckoutForm() {
             discount={discount}
           />
 
-          <div className={clsx(styles.totalBlock, styles.mb48)}>
+          <div className={clsx(styles.totalBlock, styles.subTotalBlock)}>
             <h2 className={styles.totalTitle}>Sub total</h2>
             <p className={styles.totalAmount}>{subTotal}</p>
           </div>
 
-          <div className={clsx(styles.totalBlock, styles.mb80)}>
+          <div className={clsx(styles.totalBlock, styles.shippingFeeBlock)}>
             <h2 className={styles.totalTitle}>Shipping Fee</h2>
-            <p className={styles.totalAmount}>{shippingFee}</p>
+            <p className={styles.totalAmount}>{SHIPPING_FEE}</p>
           </div>
 
           <div className={styles.resultBlock}>

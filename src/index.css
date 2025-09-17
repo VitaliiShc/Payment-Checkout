@@ -20,8 +20,18 @@
 
 body {
   font-family: var(--font-family);
-  margin: 0 auto;
   background-color: var(--background);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
 }
 
 header,
@@ -43,6 +53,9 @@ li {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+}
 ul {
   padding-left: 0;
   list-style-type: none;

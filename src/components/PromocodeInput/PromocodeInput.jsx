@@ -3,6 +3,7 @@ import styles from './PromocodeInput.module.css';
 
 export default function PromocodeInput({ subTotal, setDiscount, discount }) {
   const [value, setValue] = useState('');
+
   useEffect(() => {
     if (discount === 0) {
       setValue('');

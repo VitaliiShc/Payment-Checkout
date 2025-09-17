@@ -26,9 +26,7 @@ export default function Features() {
         <div className={clsx(styles.image, styles.imageSupport)}></div>
         <h3 className={styles.title}>Online Support</h3>
         <p className={styles.text}>
-          Online complaint service for
-          <br />
-          24 hours without stopping
+          Online complaint service for 24&nbsp;hours without stopping
         </p>
       </div>
     </section>
