@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
+import { useTranslation } from '@/utils';
 import clsx from 'clsx';
-import MobileMenu from '../MobileMenu/MobileMenu';
+import { MobileMenu } from '@/components';
+import { HEADER_LINKS } from '@/constants/constants';
 import styles from './Header.module.css';
 
-export default function Header() {
+export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const isNotCartPage = location.pathname !== '/cart';
+  const { t } = useTranslation();
 
   useEffect(() => {
     setIsMenuOpen(false);
@@ -22,7 +25,11 @@ export default function Header() {
   }, [isMenuOpen]);
 
   const buildLinkClass = ({ isActive }) => {
-    return clsx(styles.navLink, isActive && styles.active);
+    return clsx(
+      styles.navLink,
+      isActive && styles.active,
+      !isActive && styles.unActive
+    );
   };
 
   return (
@@ -33,6 +40,7 @@ export default function Header() {
             className={styles.menuBtn}
             onClick={() => setIsMenuOpen((prev) => !prev)}
             aria-label="Menu"
+            type="button"
           >
             <svg className={styles.icon}>
               <use
@@ -46,25 +54,11 @@ export default function Header() {
           </NavLink>
 
           <nav className={styles.nav}>
-            <NavLink to="/" className={buildLinkClass}>
-              Home
-            </NavLink>
-
-            <NavLink to="/about" className={buildLinkClass}>
-              About
-            </NavLink>
-
-            <NavLink to="/reviews" className={buildLinkClass}>
-              Reviews
-            </NavLink>
-
-            <NavLink to="/contacts" className={buildLinkClass}>
-              Contact
-            </NavLink>
-
-            <NavLink to="/shop" className={buildLinkClass}>
-              Shop
-            </NavLink>
+            {HEADER_LINKS.map(({ to, label }) => (
+              <NavLink key={to} to={to} className={buildLinkClass}>
+                {t(`${label}`)}
+              </NavLink>
+            ))}
           </nav>
 
           <div className={styles.icons}>

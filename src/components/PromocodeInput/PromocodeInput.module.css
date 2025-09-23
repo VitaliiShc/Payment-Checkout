@@ -1,3 +1,10 @@
+.promocodeTitle {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.12;
+  margin-bottom: 24px;
+}
+
 .inputWrap {
   position: relative;
   width: 100%;
@@ -14,9 +21,18 @@
   line-height: 1.12;
 }
 
+.promocodeInput::placeholder {
+  color: var(--gray);
+}
+
 .promocodeInput:is(:hover, :focus) {
   border-color: var(--border-focus);
   outline: none;
+}
+
+.profileLink {
+  display: inline-block;
+  text-decoration: underline;
 }
 
 .applyCodeBtn {
@@ -34,6 +50,21 @@
   background: var(--primary);
   border: none;
   cursor: pointer;
+  transition: color var(--transition);
+}
+
+.applyCodeBtn:hover {
+  color: var(--dark);
+}
+
+.errorMsg {
+  margin-left: 10px;
+  color: red;
+  font-size: 0.9rem;
+}
+
+.invalid::placeholder {
+  color: red;
 }
 
 @media (min-width: 480px) {
@@ -43,6 +74,10 @@
 }
 
 @media (min-width: 768px) {
+  .promocodeTitle {
+    font-size: 14px;
+  }
+
   .promocodeInput {
     font-size: 14px;
   }
@@ -53,6 +88,10 @@
 }
 
 @media (min-width: 1024px) {
+  .promocodeTitle {
+    font-size: 16px;
+  }
+
   .inputWrap {
     margin-bottom: 76px;
   }

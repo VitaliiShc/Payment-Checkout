@@ -1,0 +1,17 @@
+[
+  {
+    "code": "ALL10",
+    "label": "10%",
+    "value": "10"
+  },
+  {
+    "code": "TOP",
+    "label": "20%",
+    "value": "20"
+  },
+  {
+    "code": "PREMIUM",
+    "label": "25%",
+    "value": "25"
+  }
+]

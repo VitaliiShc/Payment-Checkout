@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "name": "Capsul White",
+    "drugForm": "15 Capsul",
+    "color": "White",
+    "packs": 4,
+    "price": 140
+  },
+  {
+    "id": "2",
+    "name": "Rainbow Drugs",
+    "drugForm": "10 Capsul",
+    "color": "White",
+    "packs": 4,
+    "price": 140
+  },
+  {
+    "id": "3",
+    "name": "Rainbow Drugs White",
+    "drugForm": "5 Capsul",
+    "color": "White",
+    "packs": 4,
+    "price": 140
+  },
+  {
+    "id": "4",
+    "name": "Zaitun Olive Oil",
+    "drugForm": "2 Bottle",
+    "color": "White",
+    "packs": 4,
+    "price": 140
+  },
+  {
+    "id": "5",
+    "name": "Acetylcysteine Pill",
+    "drugForm": "15 Capsul",
+    "color": "White",
+    "packs": 4,
+    "price": 140
+  }
+]

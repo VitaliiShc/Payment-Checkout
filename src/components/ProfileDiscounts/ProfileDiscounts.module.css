@@ -1,0 +1,48 @@
+.profileDiscounts {
+  width: 25%;
+}
+
+.blockLabel {
+  font-weight: 500;
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+.discountList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.discountItem {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  line-height: 1.12;
+  align-items: center;
+}
+
+.tableLabel {
+  font-weight: 500;
+}
+
+.copyBtn {
+  border: 1px solid var(--primary);
+  border-radius: 10px;
+  padding: 4px;
+  background-color: var(--feature-img-bgc);
+  color: var(--dark);
+  font-weight: 500;
+  cursor: pointer;
+  outline: 1px solid transparent;
+  transition: color var(--transition), outline var(--transition);
+}
+
+.copyBtn:is(:hover, :focus) {
+  color: var(--primary);
+  outline: 1px solid var(--primary);
+}
+
+.copyBtnCopied {
+  color: green;
+  outline: 1px solid green;
+}

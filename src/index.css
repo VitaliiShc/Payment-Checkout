@@ -16,6 +16,9 @@
   --border-focus: #0f0d23;
   --img-background: #c4c4c4;
   --feature-img-bgc: #fff3ec;
+
+  /* transitions */
+  --transition: 300ms ease-in-out;
 }
 
 body {
@@ -29,6 +32,11 @@ body,
   height: 100%;
 }
 
+html {
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+
 #root {
   display: flex;
   flex-direction: column;
@@ -38,6 +46,7 @@ header,
 main,
 footer,
 body,
+section,
 p,
 a,
 h1,
@@ -56,6 +65,7 @@ li {
 a {
   text-decoration: none;
 }
+
 ul {
   padding-left: 0;
   list-style-type: none;

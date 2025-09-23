@@ -1,8 +1,7 @@
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(1px);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 50;
 }
 
@@ -15,7 +14,7 @@
   background-color: var(--primary);
   pointer-events: none;
   transform: translateY(-100%);
-  transition: transform 3000ms ease-in-out;
+  transition: transform var(--transition);
 }
 
 .menu.open {
@@ -38,6 +37,20 @@
   font-size: 12px;
   color: var(--white);
   text-align: center;
+  transition: color var(--transition);
+}
+
+.navLink:hover {
+  color: var(--footer);
+}
+
+.active {
+  color: var(--footer);
+  font-weight: 500;
+}
+
+.unActive {
+  color: var(--white);
 }
 
 @media (min-width: 480px) {

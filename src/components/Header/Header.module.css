@@ -51,11 +51,6 @@
   display: none;
 }
 
-.active {
-  color: var(--footer);
-  font-weight: 500;
-}
-
 .pulsar {
   position: relative;
 }
@@ -102,6 +97,19 @@
 
   .navLink {
     font-size: 12px;
+    transition: color var(--transition);
+  }
+
+  .navLink:hover {
+    color: var(--footer);
+  }
+
+  .active {
+    color: var(--footer);
+    font-weight: 500;
+  }
+
+  .unActive {
     color: var(--white);
   }
 

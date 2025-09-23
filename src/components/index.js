@@ -1,0 +1,10 @@
+export { Calculation } from './Calculation/Calculation';
+export { Cart } from './Cart/Cart';
+export { CartItem } from './CartItem/CartItem';
+export { CheckoutForm } from './CheckoutForm/CheckoutForm';
+export { Features } from './Features/Features';
+export { Footer } from './Footer/Footer';
+export { Header } from './Header/Header';
+export { MobileMenu } from './MobileMenu/MobileMenu';
+export { PromocodeInput } from './PromocodeInput/PromocodeInput';
+export { ProfileDiscounts } from './ProfileDiscounts/ProfileDiscounts';

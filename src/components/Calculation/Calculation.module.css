@@ -1,0 +1,93 @@
+.totalBlock {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.totalBlock::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -16px;
+  height: 1px;
+  background-color: var(--border);
+}
+
+.subTotalBlock {
+  margin-bottom: 24px;
+}
+
+.totalTitle,
+.totalValue {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 0.9;
+}
+
+.totalValue::before {
+  content: '$';
+}
+
+.shippingFeeBlock {
+  margin-bottom: 40px;
+}
+
+.resultBlock {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.result {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 0.75;
+}
+
+.result::before {
+  content: '$';
+}
+
+@media (min-width: 768px) {
+  .subTotalBlock {
+    margin-bottom: 36px;
+  }
+
+  .totalTitle,
+  .totalValue {
+    font-size: 18px;
+  }
+
+  .shippingFeeBlock {
+    margin-bottom: 60px;
+  }
+
+  .result {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .subTotalBlock {
+    margin-bottom: 48px;
+  }
+
+  .totalTitle,
+  .totalValue {
+    font-size: 20px;
+  }
+
+  .shippingFeeBlock {
+    margin-bottom: 80px;
+  }
+
+  .resultBlock {
+    margin-bottom: 40px;
+  }
+
+  .result {
+    font-size: 24px;
+  }
+}

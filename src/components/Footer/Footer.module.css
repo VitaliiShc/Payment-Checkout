@@ -71,7 +71,7 @@
 
 .link {
   display: block;
-  transition: color 300ms ease-in-out;
+  transition: color var(--transition);
 }
 
 .link:is(:hover, :focus) {
@@ -108,7 +108,7 @@
   width: 24px;
   height: 24px;
   opacity: 0.6;
-  transition: opacity 300ms ease-in-out;
+  transition: opacity var(--transition);
 }
 
 .socialIcon:is(:hover, :focus) {
