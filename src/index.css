@@ -32,11 +32,6 @@ body,
   height: 100%;
 }
 
-html {
-  overflow-y: auto;
-  scrollbar-gutter: stable;
-}
-
 #root {
   display: flex;
   flex-direction: column;
