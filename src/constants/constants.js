@@ -1,5 +1,6 @@
 export const SHIPPING_FEE = 40;
 export const CART_LOCAL_STORAGE_KEY = 'cart';
+export const FORM_USER_DATA_LOCAL_STORAGE_KEY = 'userData';
 export const HEADER_LINKS = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },

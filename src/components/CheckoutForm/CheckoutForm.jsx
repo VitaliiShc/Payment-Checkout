@@ -1,22 +1,40 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from '@/utils';
-import { Formik, Form, ErrorMessage } from 'formik';
+import { Formik, Form, ErrorMessage, useFormikContext } from 'formik';
 import { useCart } from '@/context/cartContext';
-import { SHIPPING_FEE } from '@/constants/constants';
+import {
+  SHIPPING_FEE,
+  FORM_USER_DATA_LOCAL_STORAGE_KEY,
+} from '@/constants/constants';
 import { checkoutSchema } from '@/schemas/schemas';
 import { FormInput, Button, SelectInput, RadioGroup } from '@/components/ui';
 import { Cart, Calculation } from '@/components';
 import styles from './CheckoutForm.module.css';
 
+function PersistFormikValues({ enabled }) {
+  const { values } = useFormikContext();
+
+  useEffect(() => {
+    if (!enabled) return;
+    localStorage.setItem(
+      FORM_USER_DATA_LOCAL_STORAGE_KEY,
+      JSON.stringify(values)
+    );
+  }, [values, enabled]);
+
+  return null;
+}
+
 export function CheckoutForm() {
   const [discount, setDiscount] = useState(0);
+  const [persistEnabled, setPersistEnabled] = useState(true);
   const { cartList, sum, clearCart } = useCart();
   const { t } = useTranslation();
   const shippingFee = sum !== 0 ? SHIPPING_FEE : 0;
   const subTotal = sum - discount;
   const total = subTotal + shippingFee;
 
-  const initialValues = {
+  const defaultValues = {
     fullName: '',
     email: '',
     phone: '',
@@ -28,6 +46,11 @@ export function CheckoutForm() {
     payment: '',
   };
 
+  const savedValues = JSON.parse(
+    localStorage.getItem(FORM_USER_DATA_LOCAL_STORAGE_KEY) || 'null'
+  );
+  const initialValues = savedValues || defaultValues;
+
   const handleSubmit = (values, { resetForm }) => {
     const submitData = {
       ...values,
@@ -38,10 +61,14 @@ export function CheckoutForm() {
       total,
     };
 
-    resetForm();
+    console.info('Checkout form data:', submitData);
+
+    setPersistEnabled(false);
+    localStorage.removeItem(FORM_USER_DATA_LOCAL_STORAGE_KEY);
+    resetForm({ values: defaultValues });
     setDiscount(0);
     clearCart();
-    console.log('Checkout form data:', submitData);
+    setTimeout(() => setPersistEnabled(true), 0);
   };
 
   return (
@@ -51,6 +78,8 @@ export function CheckoutForm() {
       onSubmit={handleSubmit}
     >
       <Form className={styles.form}>
+        <PersistFormikValues enabled={persistEnabled} />
+
         <div className={styles.deliveryDetails}>
           <fieldset className={styles.fieldset}>
             <legend className={styles.legend}>{t('Personal Details')}</legend>
